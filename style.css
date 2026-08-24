@@ -1,0 +1,202 @@
+/* ==========================================================================
+   Variáveis Globais e Temas
+   ========================================================================== */
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --primary-color: #5b8296;
+    --primary-hover: #4a6e82;
+    --secondary-color: #799fcb;
+    --accent-color: #cdd1c4;
+    --text-main: #2b3a42;
+    --text-muted: #62727b;
+    --border-color: #e0e6ed;
+    --focus-ring: rgba(121, 159, 203, 0.25);
+    --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+}
+
+/* ==========================================================================
+   Reset e Estilos Base
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   Container Principal
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 760px;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Cabeçalho Artístico
+   ========================================================================== */
+.header-art {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    padding: 48px 32px;
+    text-align: center;
+    position: relative;
+}
+
+.header-art h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.header-art p {
+    font-size: 1.1rem;
+    opacity: 0.92;
+    font-weight: 300;
+}
+
+/* ==========================================================================
+   Seção de Conteúdo e Formulário
+   ========================================================================== */
+.content-section {
+    padding: 40px 32px;
+}
+
+.intro-text {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--text-main);
+    background-color: #fafbfc;
+    transition: all 0.25s ease-in-out;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px var(--focus-ring);
+    background-color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* ==========================================================================
+   Botões e Ações
+   ========================================================================== */
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(91, 130, 150, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(91, 130, 150, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.footer-note {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Animações
+   ========================================================================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .header-art {
+        padding: 36px 20px;
+    }
+
+    .header-art h1 {
+        font-size: 1.75rem;
+    }
+
+    .content-section {
+        padding: 28px 20px;
+    }
+}
